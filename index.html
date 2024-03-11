@@ -1,0 +1,64 @@
+<!-- input needs -->
+<head>
+    <title>GTH</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        background-color: bisque;
+        font-size: xx-large;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        button,p,input,h1{
+            padding-bottom: 10px;
+        }
+    }
+    input:hover{
+        background-color: chartreuse;
+    }
+    button:hover{
+        background-color: chartreuse;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Created By Shri Krishna</h1>
+        <h2 style="font-size: 60px;">Guess the Number</h2>
+        <input id="guessnumber">
+        <button onclick="check()">check</button>
+        <p id="result">You Are Wrong / Right</p>
+        <p id ="score">Score : 10</p>
+    </div>
+
+<script>
+    // seleting a inputs da tes
+    var guessnumber= document.getElementById("guessnumber")
+    var result = document.getElementById("result")
+    var randomnumber = Math.floor(Math.random()*10)+1
+    var resultscore=document.getElementById("score")
+    var score = 10
+ 
+    function check()
+    {
+        var enternum=guessnumber.value
+        if(randomnumber==enternum)
+        {
+            console.log("Right")
+            result.textContent="Right"
+            window.alert("YOU WON")
+        }
+        else{
+            console.log("Wrong")
+            result.textContent="Wrong"
+            score=score-1
+            resultscore.textContent="Remaining Score : "+score
+        } 
+    }
+</script>
+</body>
